@@ -7,3 +7,5 @@ pnc aims to be:
 + Customizable, via meta-type statements.
 + Intent-Driven, via input data models.
 + Extensible, via external Python modules.
+
+![Figure: Intent-Driven Controller](assets/images/intent-based-controller.svg)
