@@ -13,6 +13,20 @@ class NetworkDevice(ABC):
     def connect(self, strategy: ConnectionStrategy):
         pass
 
+class EmptyDevice(NetworkDevice):
+    def connect(self, strategy: ConnectionStrategy):
+        pass
+
 class CiscoDevice(NetworkDevice):
+    def __init__(self, address, hostname, username, password,
+                 secret, platform):
+        self.address  = address
+        self.hostname = hostname
+        self.username = username
+        self.password = password
+        self.secret   = secret
+        self.platform = platform
+
     def connect(self):
+        pass
 
