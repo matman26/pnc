@@ -1,0 +1,5 @@
+<group name="{{ntp_server}}">
+{{ _start_ }}
+ntp server {{ ntp_server }}
+{{ _end_ }}
+</group>

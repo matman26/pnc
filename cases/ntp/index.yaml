@@ -1,0 +1,19 @@
+---
+meta:
+  description: |
+     A Simple NTP server Compliance Controller.
+  author: Matheus Augusto da Silva
+  contact: a.matheus26@hotmail.com
+  revision: 0.0.1
+platforms:
+  - cisco_ios
+  - cisco_xe
+  - cisco_xr
+parsers:
+  - file: ntp.ttp
+    cli:  show run ntp
+templaters:
+  - file: ntp.j2
+models:
+  - file: ntp.yang
+---
