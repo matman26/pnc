@@ -8,4 +8,4 @@ pnc aims to be:
 + Intent-Driven, via input data models.
 + Extensible, via external Python modules.
 
-![Figure: Intent-Driven Controller](assets/images/intent-based-controller.svg)
+![Figure: Intent-Driven Controller](assets/images/intent-driven-cli-controller.png)
