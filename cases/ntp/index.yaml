@@ -11,7 +11,7 @@ platforms:
   - cisco_xr
 parsers:
   - file: ntp.ttp
-    cli:  show run ntp
+    cli: show run ntp
 templaters:
   - file: ntp.j2
 models:
