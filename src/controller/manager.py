@@ -1,26 +1,37 @@
-from typing import List
+from typing import List, Dict
+from dataclasses import dataclass
 from src.models.NetworkDevice import NetworkDevice, EmptyDevice, CiscoDevice
+
+class TemplateLoader():
+    pass
+
+class ParserLoader():
+    pass
+
+@dataclass
+class ModuleConfig():
+    pass
+
+class ModuleLoader():
+    def __init__(self, tl: TemplateLoader, pl: ParserLoader, mc: ModuleConfig):
+        pass
 
 class InventoryManager():
     def __init__(self):
-        self.devices = []
+        self.devices = {}
 
-    def get_devices(self) -> List[NetworkDevice]:
+    def get_devices(self) -> Dict[str, NetworkDevice]:
         return self.devices
 
     def get_device(self, hostname: str) -> NetworkDevice:
-        out_device = EmptyDevice()
-        for index, device in enumerate(self.devices):
-            if device.hostname == hostname:
-                out_device = self.devices[index]
-        return out_device
+        return self.devices.get(hostname, EmptyDevice())
 
     def add_device(self, device: NetworkDevice):
-        if device not in self.devices:
-            self.devices.append(device)
+        if device.hostname not in self.devices:
+            self.devices[device.hostname] = device
 
     def clear_inventory(self):
-        self.devices = []
+        self.devices = {}
 
 class Controller():
     """Manage InventoryManager and Cases."""
